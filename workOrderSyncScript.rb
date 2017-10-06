@@ -1,5 +1,8 @@
 require 'net/http'
 require 'uri'
+require 'openssl'
+require 'json'
+
 
 class SyncWorkOrder
 
@@ -91,7 +94,8 @@ class SyncWorkOrder
     request.body = payload.to_json
 
     response = http.request(request)
-    puts response.read_body
+
+    puts "Your Order has been synced, here is the execution id #{response.read_body}"
   end
 
   def starter
