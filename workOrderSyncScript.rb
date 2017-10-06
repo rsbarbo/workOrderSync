@@ -29,6 +29,9 @@ class SyncWorkOrder
   end
 
   def preForGetCall(workOrder)
+    # The only reason why we want to keep going through all the possible scenarios
+    # is that we want to make sure for continuation order i.e. WOOOOO1-1, WOOOOO1-2, WOOOOO1-3
+    # we capture all of them.
     Array(0...10).each do |missingDigit|
       completeWorkOrder = "#{workOrder}-#{missingDigit}"
       performGetCall(completeWorkOrder)
