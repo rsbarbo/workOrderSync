@@ -23,7 +23,7 @@ class SyncWorkOrder
       preForGetCall(workOrder)
     elsif workOrder.length < 9 && workOrder.length > 1
       puts 'It looks like you are missing a digit, please verify work order number'
-    elsif workOrder.length >= 1
+    elsif workOrder.length <= 1
       puts 'Please make sure you entered a correct work order'
     end
   end
