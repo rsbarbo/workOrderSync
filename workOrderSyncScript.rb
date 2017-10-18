@@ -60,11 +60,11 @@ class SyncWorkOrder
     end
   end
 
-  def validateParsedBody(body)
-    if body.values.pop['contactId'] != nil && body.values.pop['contactId'].length.between?(8, 10)
-      buildPayloadForPostRequest(body)
-    else body.values.pop['uuid'] != nil && body.values.pop['uuid'].length.between?(8, 10)
-      buildPayloadForPostRequest(body)
+  def validateParsedBody(parsedBody)
+    if parsedBody.values.pop['contactId'] != nil && parsedBody.values.pop['contactId'].length.between?(8, 10)
+      buildPayloadForPostRequest(parsedBody)
+    else parsedBody.values.pop['uuid'] != nil && parsedBody.values.pop['uuid'].length.between?(8, 10)
+      buildPayloadForPostRequest(parsedBody)
     end
   end
 
