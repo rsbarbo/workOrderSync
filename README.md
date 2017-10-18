@@ -11,8 +11,9 @@
 
 ### Running the script
 
-- Now you should be all set and ready to go, just run the following command `ruby workOrderSyncScript.rb` and you will be prompt to enter the following information:
-  a. Enter your Cloud Elements User Token
-  b. Enter your Cloud Elements Organization Token
-  c. Enter your Cloud Elements E-Emphasys 2.0 Element Instance token
-  d. What is your WO number?
+- Now you should be all set and ready to go, just run the following command `ruby workOrderSyncScript.rb` and you will be prompt to enter the following information:   
+
+a. Enter your Cloud Elements User Token   
+b. Enter your Cloud Elements Organization Token  
+c. Enter your Cloud Elements E-Emphasys 2.0 Element Instance token   
+d. What is your WO number?
