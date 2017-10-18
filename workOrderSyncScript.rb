@@ -3,7 +3,6 @@ require 'uri'
 require 'openssl'
 require 'json'
 
-
 class SyncWorkOrder
 
   def get_work_order
@@ -62,7 +61,11 @@ class SyncWorkOrder
   end
 
   def validateParsedBody(parsedBody)
-    buildPayloadForPostRequest(parsedBody) if parsedBody.values.pop['contactId'].length.between?(8, 10)
+    if parsedBody.values.pop['contactId'] != nil && parsedBody.values.pop['contactId'].length.between?(8, 10)
+      buildPayloadForPostRequest(parsedBody)
+    else parsedBody.values.pop['uuid'] != nil && parsedBody.values.pop['uuid'].length.between?(8, 10)
+      buildPayloadForPostRequest(parsedBody)
+    end
   end
 
   def buildPayloadForPostRequest(parsedBody)
@@ -98,7 +101,7 @@ class SyncWorkOrder
 
     response = http.request(request)
 
-    puts "Your Order has been synced, here is the execution id #{response.read_body}"
+    puts "Your Order has been synced, here is the execution id #{response.read_body}" if response.code == "200"
   end
 
   def starter
