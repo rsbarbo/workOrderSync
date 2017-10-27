@@ -6,7 +6,7 @@
 - Once Terminal is open, you will be in the root directory ($HOME).
 - Run the following command `git clone https://github.com/rsbarbo/workOrderSync.git`.
 - Once the installation is done, run the following command `cd workOrderSyncProject`
-- Once you are done with previous step, run the following command `brew install bundler`, you can find more information at http://bundler.io/.
+- Once you are done with previous step, run the following command `gem install bundler`, you can find more information at http://bundler.io/.
 - Once the bundler is installed, you will run the `bundle install` command.
 
 ### Running the script
